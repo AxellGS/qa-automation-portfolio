@@ -9,11 +9,14 @@
 ```
 📂 qa-automation-portfolio-2026
 ├── 📁 .github/workflows        # CI/CD pipeline (GitHub Actions)
-├── 📁 src/pages                 # Page Object Model (POM)
-│   ├── LoginPage.ts
-│   ├── InventoryPage.ts
-│   ├── CartPage.ts
-│   └── CheckoutPage.ts
+├── 📁 src
+│   ├── 📁 pages                 # Page Object Model (POM)
+│   │   ├── LoginPage.ts
+│   │   ├── InventoryPage.ts
+│   │   ├── CartPage.ts
+│   │   └── CheckoutPage.ts
+│   └── 📁 utils                 # Shared test constants
+│       └── constants.ts
 ├── 📁 tests
 │   ├── 📁 api                   # API contract tests (DummyJSON)
 │   │   └── users.spec.ts
@@ -41,6 +44,7 @@
 | **Custom Fixtures (`baseTest.ts`)** | Extends Playwright's `test.extend()` to inject page objects and pre-authenticated state. Eliminates repetitive `beforeEach()` login logic. |
 | **Dynamic Data (Faker.js)** | Replaces static test data with randomized inputs (names, postal codes) to catch edge-case bugs that hardcoded values miss. |
 | **Separate Projects (UI vs API)** | `playwright.config.ts` defines isolated projects (`e2e-chromium`, `api-tests`) with distinct `baseURL` and `testDir`, preventing cross-contamination between test types. |
+| **Centralized Test Data (`constants.ts`)** | Credentials and shared values live in one place. A single change propagates to all tests — no hunting through spec files. |
 | **Performance SLAs (k6)** | Defines quantitative performance thresholds (p95 < 500ms, error rate < 1%) so that "fast enough" is measurable, not subjective. |
 
 ---
