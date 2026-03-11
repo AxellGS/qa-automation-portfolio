@@ -63,7 +63,7 @@ npm run test:ui
 # Run only API tests
 npm run test:api
 
-# Run performance tests (requires k6 installed)
+# Run performance tests (requires k6 — install from https://k6.io/docs/get-started/installation/)
 npm run test:perf
 
 # View HTML report
