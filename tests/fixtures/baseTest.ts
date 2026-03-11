@@ -3,6 +3,7 @@ import { LoginPage } from '@pages/LoginPage';
 import { InventoryPage } from '@pages/InventoryPage';
 import { CartPage } from '@pages/CartPage';
 import { CheckoutPage } from '@pages/CheckoutPage';
+import { USERS } from '@utils/constants';
 
 type PortfolioFixtures = {
   loginPage: LoginPage;
@@ -33,7 +34,7 @@ export const test = baseTest.extend<PortfolioFixtures>({
 
   // Stateful fixture: handles login automatically, provides an authenticated InventoryPage
   standardUserPage: async ({ page, loginPage, inventoryPage }, use) => {
-    await loginPage.login('standard_user', 'secret_sauce');
+    await loginPage.login(USERS.standard.username, USERS.standard.password);
     await use(inventoryPage);
   }
 });
