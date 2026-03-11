@@ -1,0 +1,28 @@
+{
+  "name": "qa-automation-portfolio-2026",
+  "version": "1.0.0",
+  "description": "Real-world QA Automation Setup using Playwright, TypeScript, and k6",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:ui": "npx playwright test --project=e2e-chromium",
+    "test:api": "npx playwright test tests/api",
+    "report": "npx playwright show-report",
+    "test:perf": "k6 run tests/performance/api_load.spec.js"
+  },
+  "keywords": [
+    "qa",
+    "automation",
+    "playwright",
+    "typescript",
+    "sdet"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^9.5.0",
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.5",
+    "typescript": "^5.7.3"
+  }
+}
